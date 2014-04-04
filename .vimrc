@@ -10,6 +10,8 @@ set splitbelow
 " Font setting for gvim (ubuntu), need install Ricty fonts first
 set guifont=Ricty\ 12
 
+au FileType javascript call JavaScriptFold()
+
 " -------------------------------------------------
 " netrw configurations
 " 2014/3/29
@@ -26,8 +28,7 @@ let g:netrw_alto = 1
 let g:netrw_winsize = 80
 
 " -------------------------------------------------
-" NeoBundle configuration
-" 2014/3/29
+" NeoBundle configuration " 2014/3/29
 " NeoBundle がインストールされていない時、
 " " もしくは、プラグインの初期化に失敗した時の処理
 function! s:WithoutBundles()
@@ -171,3 +172,5 @@ NeoBundle 'gre/play2vim'
 " Unite
 NeoBundle 'Shougo/unite.vim'
 
+" Javascript syntax
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
